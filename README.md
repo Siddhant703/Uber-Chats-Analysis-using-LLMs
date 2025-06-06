@@ -1,126 +1,89 @@
-# Uber-Chats-Analysis-using-LLMs
-This project leverages large language models (LLMs) via a Google Colab notebook to classify, analyze, and evaluate textual content such as confessions, advice, and messages. It supports categorization, clustering, topic modeling, and tone detection using custom prompts and parallel processing techniques.
+# 💬 LLM-Based Text Classification and Analysis
 
-📎 Colab Notebook: Run the Notebook
+This project leverages large language models (LLMs) to classify, evaluate, and analyze Uber messages. It supports categorization, clustering, topic modeling, and tone detection using custom prompts and efficient parallel processing.
 
-🗂️ Project Structure
-The process is broken into four main stages:
+The goal of this project was to gain insight into gig economy behaviour by classifying Uber messages (individually) into whether they exhibit gig-specific leadership/helping/power mechanisms using detailed prompting. Furthermore, I use iterative chunking along with specific prompts to analyse tones/topics/clusters displayed in such messages.
 
-1. 🔧 Data Preparation
-1.1 Method 1 – Single File Processing
-A single CSV file is loaded for analysis.
+---
 
-Control the number of rows using the num parameter.
+## Project Workflow
 
-1.2 Method 2 – Multiple File Merging
-Multiple datasets (e.g., confessions, advice) are read and concatenated into one dataset.
+### 1. Data Preparation
 
-Use the num parameter to limit rows per file.
+There are two ways to load the data:
 
-Note: Update the 'content' column with data from Sid Results -> Data Files.
+#### 1.1 Method 1 – Single File Processing
+- A single CSV file is read.
+- Control the number of rows using the `num` parameter.
 
-2. 🧠 Classification Process
-2.1 How Classification Works
-✅ Prompting the Model
-Predefined prompts classify text into categories such as:
+#### 1.2 Method 2 – Multiple File Merging
+- Multiple CSV files (e.g., confessions, advice) from the Uber platform are loaded and concatenated.
+- Use the `num` parameter to limit the number of rows per file.
 
-Power
+---
 
-Leadership
+### 2. Classification Process
 
-Helping
+This section classifies messages into predefined categories and generates justifications for each classification.
 
-⚙️ Parallel Processing
-Messages are processed in parallel using ThreadPoolExecutor to improve performance.
+#### Categories:
+- Power
+- Leadership
+- Helping
 
-🧾 Output Columns
-Label: Predicted category (e.g., "Leadership")
+#### How it Works:
+- **Prompting**: A detailed predefined prompt guides the model in how to classify each message by giving it context of how leadership/power/helping is defined in the gig economy
+- **Parallel Processing**: `ThreadPoolExecutor` is used for efficient processing of multiple messages.
+- **Outputs**:
+  - `Label`: Category assigned to the message
+  - `Explanation`: Justification for that classification
 
-Explanation: Justification for the assigned label
+> Set the correct column name when calling `parallel_generate`, and choose the appropriate prompt from **All Prompts for Classification** based on the topic (e.g., leadership/helping/power).
 
-Make sure the correct column (e.g., 'Column Name') is passed to the parallel_generate function.
-Choose the appropriate prompt from Section 2 – All Prompts for Analysis based on your topic (e.g., leadership/helping/power).
+---
 
-3. 📊 Evaluating Model Performance
-This section is for evaluating classification accuracy using manually labeled data.
+### 3. Evaluating Model Performance
 
-3.1 Metrics
-Accuracy: % of correct predictions
+Use this section if you have a manually labeled dataset with each message manually classified into one of the 3 categories - used to evaluate prompt performance and construct final prompt
 
-Recall: Ability to find all relevant cases
+#### Metrics Calculated:
+- **Accuracy**: Percentage of correct predictions
+- **Recall**: Model’s ability to find all relevant cases
+- **Precision**: Accuracy of the positive predictions
 
-Precision: Proportion of true positive predictions
+#### Steps:
+1. Specify the column with manual labels.
+2. Run the metric calculation blocks.
+3. Review the printed scores.
 
-3.2 Steps to Evaluate
-Provide the column name with manual labels.
+---
 
-Run the metric calculation cells.
+### 4. Analysis: Clustering, Topic, and Tone
 
-Review printed scores to evaluate model performance.
+This section uses the GPT4o-mini model in an interative chunking manner to generate clustering, topic, and tone insights.
 
-4. 🔍 Analysis Process: Clustering, Topic, and Tone
-This phase uses chunking and LLMs for further textual insights.
+#### 4.1 When to Use:
 
-4.1 When to Use What
-4.1.1 Clustering
-Run this for messages labeled as 1 (positive).
+- **Clustering**: Use for messages labeled `1` (power/leadership/helping), includes both messages and explanations.
+- **Topic/Tone**: Use for all messages (`0s` and `1s`), includes only messages.
 
-Both messages and explanations are used.
+#### 4.2 Chunking Parameters:
+- `Step Size`: Number of messages per chunk (recommended: 50–100 as anything more results in hallcunations by the LLM)
+- `Max Workers`: Number of parallel tasks for faster processing
 
-4.1.2 Tone and Topic Analysis
-Analyze both 0s and 1s.
+#### 4.3 Steps to Run Analysis:
 
-Only messages are considered here.
+**Step 1: Initial Table Generation (Prompt 1)**
+- Uses selected messages (with explanations) to generate initial set of tables.
+- Choose the appropriate prompt from **Section 2 –All Prompts for Analysis**.
 
-4.2 Chunking Parameters
-Step Size: Number of messages (+ explanations) per LLM call (Recommended: 50–100)
+**Step 2: Iterative Table Refinement (Prompt 2)**
+- Refines the table output generated in the previous step iteratively using a different prompt optimized for summarization.
+- Choose the appropriate prompt from **Section 2 –All Prompts for Analysis**.
 
-Max Workers: Number of parallel calls for faster performance
+---
 
-4.3 Step-by-Step Analysis
-🧾 Step 1: Initial Table Generation (Prompt 1)
-The model generates initial tables based on messages (and optionally explanations).
+### 5. 📤 Final Output Formatting
 
-Use the appropriate prompt from Section 2 – All Prompts for Analysis.
+Used regex and in-built python functions to parse table output generated by GPT4o-mini and transforms it into a downloadable csv with a properly formatted table
 
-🔁 Step 2: Iterative Table Refinement (Prompt 2)
-Initial tables are refined iteratively using another prompt for structured output.
-
-📤 Step 5: Final Output Formatting
-Once the final table is ready:
-
-Copy-paste it into ChatGPT.
-
-Use the following prompt:
-
-pgsql
-Copy
-Edit
-Please format this table, exactly giving the full table without changing any content or text
-<FINAL TABLE PASTE HERE>
-📌 Notes
-Prompts are modular and topic-specific; always pick the relevant one based on what you are analyzing (e.g., classification, clustering, tone).
-
-The process uses OpenAI models under the hood, accessed via custom prompt engineering and chunked parallel calls for efficient handling of large datasets.
-
-📁 Repository Contents
-notebook.ipynb: Main Colab notebook to run the full pipeline
-
-README.md: This file
-
-prompts/: (Optional) Folder to store prompt templates
-
-data/: Folder for uploading CSV files
-
-outputs/: Folder for saving results
-
-🚀 Getting Started
-Open the Colab Notebook
-
-Follow the steps from data loading to analysis.
-
-Choose prompts and parameters as needed.
-
-Run evaluation if manual labels are available.
-
-Export and format final outputs using ChatGPT.
