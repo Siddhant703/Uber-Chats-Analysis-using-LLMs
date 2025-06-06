@@ -80,11 +80,11 @@ This section uses the GPT4o-mini model in an interative chunking manner to gener
 
 **Step 1: Initial Table Generation (Prompt 1)**
 - Uses selected messages (with explanations) to generate initial set of tables.
-- Choose the appropriate prompt from **Section 2 –All Prompts for Analysis**.
+- Choose the appropriate prompt from **All Prompts for Analysis**.
 
 **Step 2: Iterative Table Refinement (Prompt 2)**
 - Refines the table output generated in the previous step iteratively using a different prompt optimized for summarization.
-- Choose the appropriate prompt from **Section 2 –All Prompts for Analysis**.
+- Choose the appropriate prompt from **All Prompts for Analysis**.
 
 ---
 
