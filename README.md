@@ -7,7 +7,7 @@ The goal of this project was to gain insight into gig economy behaviour by class
 ---
 ## Installation
 
-```bash
+bash
 pip install -r requirements.txt
 
 ---
