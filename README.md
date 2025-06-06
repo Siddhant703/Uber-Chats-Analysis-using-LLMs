@@ -1,8 +1,8 @@
-# 💬 LLM-Based Text Classification and Analysis
-
-This project leverages large language models (LLMs) to classify, evaluate, and analyze Uber messages. It supports categorization, clustering, topic modeling, and tone detection using custom prompts and efficient parallel processing.
+# LLM-Based Text Classification and Analysis
 
 The goal of this project was to gain insight into gig economy behaviour by classifying Uber messages (individually) into whether they exhibit gig-specific leadership/helping/power mechanisms using detailed prompting. Furthermore, I use iterative chunking along with specific prompts to analyse tones/topics/clusters displayed in such messages.
+
+This project leverages large language models (LLMs) to classify, evaluate, and analyze Uber messages. It supports categorization, clustering, topic modeling, and tone detection using custom prompts and parallel processing.
 
 ---
 ## Installation
