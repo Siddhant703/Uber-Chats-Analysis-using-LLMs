@@ -1,0 +1,262 @@
+### Prompts for Classification
+
+Leadership
+prompt = f'''
+I want to analyze certain text to examine if the text is displaying any leadership qualities.
+I will be providing you with an uber chat message from a conversation between workers.
+Leadership qualities can be communicated via messages through partially or fully opinionated statements where they express their opinion through assertive statements. The fact that they are making such statements indicates they potentially exhibit leadership qualities. They don't necessairly have to give advice, they can also be telling someone to do something and using phrases like scram and beat it etc which indicates that they are confident/over confident and speak freely with people indicating they potentially have leadership qualities. It can be statements where someone is making a claim or talking about some personal experience in order to inform other people. These soft qualities can potentially show that someone is exhibiting leadership qualities as they're taking the lead when it comes to solving an issue in the community.  However, it is not just limited to these types of examples so please be open and extensive when classifying messages as leadership or not leadership. Please look for all possible soft qualities which could hint even slightly that the person exhibits mentoring/leader qualities. Please note that leadership doesn't have to be strongly exhibited for a message to be classified as leadership. A message which has someone subtly displaying mentoring/helping qualities would be classified as leadership as these qualities can potentially be transformed into leadership qualities in the future. Please look for very subtle clues that the person has even the slightest leadership qualities. Their usage of certain phrases could indicate they speak freely and fearlessly indicating they potentially exhibit leadership qualities. These qualities could be any one of the following (and not just limited to these) -
+Communicating a direction of the future
+Communicating a solution towards a potential issue
+Has a view of how the future would look like for us
+Paints an interesting picture of the future
+Is always seeking new opportunities
+Inspires others with his/her plans
+Fosters collaboration among work groups
+Encourages drivers
+Asks questions that prompt drivers to re-think.
+Provide someone with clear instructions what to do in case of an issue
+Share his/her experience/view  in a challenging situation
+Offer his/her help or support in a challenging situation
+criticism towards a general cause that might be relevant to others
+expressing dissapointment, frustration, dissatisfaction or any other expressal of negative sentiments - these are leadership qualities as they could be raising awareness of an issue and hence implicitly guiding others
+
+
+Please be sure to classify all such subtle messages where leadership is very subtly displayed via such soft qualities as leadership. The message doesn't have to neccessarily give any advice, it can simply just be assertive for it to be display leadership. Please be extra careful that don't miss a message - if you're unsure whether a message is leader or not, classify it as leadership
+Basically any messages where they are giving any sort of feedback and simply just sharing knowledge to someone or even just sharing a personal opinion but in an informative or assertive manner - informing someone, giving advice, asserting, providing awareness or any such qualitiy which indicates any of the soft qualities that define leadership. Be extra sensitive and leanient with your classification such that I don't miss any leadership message
+Messages like First one who posts gets it also exhibit leadership qualtiies as they tell us that the user is talking in a commanding tone suggest he exhibits leadership qualities. Be extremely careful about such commanding messages where the user is telling someone what to do as these definitely exhibit leadership qualtiies.
+Most importantly you should be looking at the tone they are talking in - if it's assertive on any level then please classify the message as leadership. Any sentence which starts with a word like "You do this" or has letters in caps or is asking questions to get information are all potential leadership examples. This is the level of analysis I want you to do and classify messages.
+For example this sentence displays leadership as the user is questionion something indicating they display leadership qualities - How is uber serving the poors needs when they are charging taxi rates or higher Uber has equity stakes in other companies and loss 700 Million this quarter and this will continue to drag on Ubers bottom line every quarter Uber loss money despite drivers current massive pay cuts since upfront rapeUber needs a new CEO
+Here are some examples of uber messages which are displaying leadership qualities. Please note that I have also provided a very vague reasoning as to why I think the message is displaying leadership. This reasoning should be used to help you with your understanding of leadership qualities in gig workers. However, please do note that there can a lot of other reasons or ways of displaying leadership qualities that are not included in this list of examples -
+
+
+{text}
+
+
+Please use all the above information to classify a given uber message into whether it displays any leadership qualities or not. I repeat, I would rather want a text classified wrongly as leader than miss a message that displays leadership - keeping this in mind, please classify a text as leader if it displays any of the above mentioned qualities even remotely. If you're unsure about a text, classify it as leader.
+I also want you to give an explanation for each message - the explanation should be as to why or why don't you think the message displays potential leadership qualities (talk about what leadership specific qualities are implied or stated in the message keeping all the knowledge I have shared about leadership in mind)
+Please give your output in the following format - [Label, Explanation]. Please strictly follow this format and do not output any unneccesary words. The output should be strictly closed within the square brackets in the given format
+Please make sure the label is either leadership or not leadership. Make sure you don't output anything else as the label.
+
+
+Here is the uber message I want you to classify -
+
+
+'''
+Helping
+prompt = f'''
+I want to analyze certain text to examine if the text is displaying any helping behaviours.
+The context of the task is that I am trying to investigate helping behaviours in the gig economy - whether the average gig worker displays any helping or caring behaviour towards their fellow workers.
+A gig economy is a free market system in which temporary positions are common and organizations hire independent workers for short-term commitments.
+For example, uber drivers would be an example of the gig worker. Similarly, I will be providing you with an uber chat message from a conversation between workers.
+Please use your knowledge of helping mechanisms and how it is displayed in text to classify the text as helping or not helping.
+Helping qualities are usually communicated via messages through certain soft qualities such as, someone is sharing a personal anecdote which could imply they are potentally trying to help people, someone is giving a set of instructions without any context which could still imply that they want people to have these instructions hence hinting helping behaviour etc. There's a lot of possibilities of ways in which messages could potentially hint helping behaviour but this could be very subtle so please catch these kind of messages. For example, a simple message such as "just provide a clean safe car" could also hint helping behaviour as the person is giving a set of instructions to someone. THis means helping behaviour in the message has nothing to do with the length of the message. You shouldnt be looking for sufficient evidence, instead you should see if theres even the smallest possibility that the person is displaying helping behviour then please classify it as helping. Please note that helping will not be explicitly displayed in the message so I want you to look for all possible qualities about the person in the message that could potentially hint that they will be willing to help. Please be extremely open and extensive when classifying messages as helping or not helping and make sure to consider all possibilities that the message display guiding someone/helping behviour. Messages can subtly imply as well that the person in the message displays helping qualities as he's giving some advice via the message, sharing some opinions which might be intended for someone else to help them in something. So please look for all such soft reasons for helping behaviour but please make sure they make sense. Helping behaviour doesn't have to displayed pro-actively in the message - like I said, it can be implied that the person displays helping qualities if they are giving some piece of advice or sharing some other information that could be potentially useful for someone else.They dont have to be pro-actively helping people for them to be classified as helping - as long as there's some soft eveidence in the message that the message could potentially imply that the person has some helping qualities. Look out for such soft aspects when considering whether a message displays helping. If you're unsure whether a message is helping or not then please classify it as helping if you have even the smallest reason as to why the person could be helping.
+Here are some examples of uber messages which are displaying helping qualities. I'll repeat, please consider all possible soft qualities in messages while classifying a message as helping or not helping. Someone saying something as simple as "wash your car" could also be helping behaviour as they are sharing their personal experience which indicates they might be saying this to help their peer have a clean car. Dont just look at the below examples but consider all possible soft statements that might display potential helping behaviour. Like I have already said, this sentence for example - Well the first thing you learn is that as soon as you decline a 20min pickup you go offline for about half a minute so you dont get hit with the second or third request I do the same after a cancel I dont want to get the next request from that rider no matter whether I canceled or they didSometimes I just take it as a sign that I need to pull over a few minutes for a pee break - would be classified as helping since the person is sharing a personal story hence implying that he wants other people to learn from his experience. please look for all such soft qualities or possibilities that imply helping intentions in the person in the message.
+
+{text}
+
+Please use all the above information to classify a given uber message into whether it displays any helping qualities or not. Please be extremely accurate. Only classify the message as helping if helping behaviour is explicitly displayed in the message or if it is explicitly implied that the person in the message is someone who likes or wants to help other people/guide them etc.
+I also want you to give an explanation for each message classified as helping/not helping - the explanation should be as to why or why not you think the message displays helping qualities (talk about what helping specific qualities are implied subtly or stated in the message)
+Please give your output in the following format - [Label, Explanation]. Please strictly follow this format and do not output any unneccesary words. The output should be strictly closed within the square brackets in the given format
+Please make sure the label is either helping or not helping. Make sure you don't output anything else as the label.
+
+Are 
+
+Here is the uber message I want you to classify -
+'''
+
+
+Power
+
+prompt = '''
+The context of the task is that I am trying to investigate power behaviours in the gig economy.
+A gig economy is a free market system in which temporary positions are common and organizations hire independent workers for short-term commitments.
+For example, uber drivers would be an example of the gig worker.
+<MAIN TASK> - Determine whether an uber message thread between drivers demonstrates a power dynamic or influence, such as the ability to change beliefs, attitudes, or behaviors through various resources or authority. Label as 'Power' if the text includes elements such as authority figures be it formal referencing to position (e.g., supervisors, higher ranking, superior) or informal characteristics of leadership. This may include instances where a person in the conversation fosters a dynamic of dependence. This may include the common bases of power found in traditional literature as well as other resources used to implement change and influence others’ opinions or points of view. Classify as 'No Power' if it lacks any indicators of influence or power dynamics or if it does not involve any action or potential for change instigated by one party over another. Provide reasoning based on the elements of social power and influence, considering whether an agent is explicitly or implicitly positioned to influence a target.
+<\MAIN TASK>
+I want you to analyze the entire thread of messages before classifying.
+I have provided some frameworks and definitions of power that you should consider. But do note that the text can exhibit a power dynamic which doesn't fit into these definitions which is why you should only use the information I have provided below as a guiding tool towards how I want you look at the message when finding for power, and not as absolute definition of power. Look for power dynamic outside these frameworks too.
+In this framework, you should:
+Look for terms indicating an ability to bring about change, particularly if it involves another person (a "target").
+1. Coercive Power
+
+Definition: Coercive power is the target’s perception that the agent has the capability to enforce punishments if the target does not comply (e.g., demotion, termination, undesirable assignments). It includes both tangible and intangible threats, such as fear of rejection or disapproval from valued figures.
+Follower’s Perspective: “I felt threatened with punishment if I did not comply.”
+Method: Coercive power uses intimidation, signaling a willingness to enforce consequences and requires effective surveillance to monitor compliance.
+Dependency: Dependent on the agent, as the target’s behavior is directly influenced by the perceived threat of punishment.
+2. Reward Power
+
+Definition: Based on the target’s belief that the agent can provide desirable rewards (such as promotions, raises, or approval) if they comply with requests.
+Follower’s Perspective: “I did it because they offered me a reward if I complied.”
+Method: Reward power involves ingratiation and surveillance to ensure the target meets expectations, motivated by the anticipation of positive incentives.
+Dependency: Dependent on the agent, as the target’s motivation is based on the reward the agent controls.
+3. Referent Power
+
+Definition: Derives from the target’s admiration for or desire to identify with the agent, leading to voluntary compliance based on shared values or aspirations.
+Follower’s Perspective: “I admire my supervisor and want to be like them, so I follow their example.”
+Method: Promoting communality and using ingratiation to foster identification with the agent’s values or goals.
+Dependency: Dependent on the relationship between agent and target, as it’s driven by the target’s admiration or desire to emulate the agent.
+4. Legitimate Power
+
+Definition: Arises from the target’s belief that the agent has a legitimate right to make demands, stemming from norms of position, reciprocity, equity, or responsibility.
+Position: Compliance is based on formal social norms (e.g., obeying authority figures).
+Reciprocity: Stemming from obligations to reciprocate past benefits received.
+Equity: The target complies as compensation for the agent’s prior hardships or sacrifices.
+Responsibility: An obligation to comply based on a sense of social duty, often considered the “power of the powerless.”
+Follower’s Perspective: “I feel obligated because they are my supervisor, or because I owe it to them for their past support.”
+Method: Emphasizing formal roles, norms, or obligations that justify the agent’s authority.
+Dependency: Dependent on the social or positional norms recognized by the target.
+5. Expert Power
+
+Definition: Relies on the target’s confidence in the agent’s expertise or knowledge, trusting the agent’s guidance without necessarily understanding the reasoning behind it. This power differs from informational power, as it does not involve direct explanation.
+Follower’s Perspective: “My supervisor has significant experience, so I trust their judgment even if I don’t fully understand the reason.”
+Method: Agents use self-promotion or convey their expertise to build credibility, implying they have insights or experience unknown to the target.
+Dependency: Dependent on the agent, as the target’s compliance stems from trust in the agent’s expertise.
+6. Informational Power
+
+Definition: Previously associated with expert power, informational power involves using persuasive data or logic to directly explain the reasons behind a request, enabling the target to act independently.
+Follower’s Perspective: “They explained how to do it differently and gave persuasive reasons, so I understood and accepted the change.”
+Method: Providing clear information or evidence that supports the recommended course of action, which allows the target to make informed decisions.
+Dependency: Independent; the target gains enough information to act without needing further guidance.
+
+
+
+Please give your output in the following format - [Label, Explanation]. Please strictly follow this format and do not output any unneccesary words. The output should be strictly closed within the square brackets in the given format
+Please make sure the label is either not power or not power. Make sure you don't output anything else as the label. Explanation should be outputted for messages classified as power. Please don't output any explanation if the message is not classified as power
+In your explanation, please do not reference any of the 6 types of power I have stated above. These definitions should just help you to understand how I want you to analyze the text. In your explanation, only reference the information I shared in <MAIN TASK> <\MAIN TASK> and the context of the message to explain why the text has power. But yes, if the message dislays any of the 6 power above, do classify it as power but use information in <MAIN TASK> to explain why it is power
+Here is the uber messages thread, containing multiple messages between driver. I want you to look at the entire thread as a whole and classify it as power or no power based on <MAIN TASK> information and the context of the message -
+'''
+
+### Prompts for Analysis (Clustering/topic/tone)
+
+Leadership
+
+Clustering
+prompt = '''I will give you a list of messages that display leadership behviour in the gigand an explanation as to why I think the message displays leadership behaviour. More importantly, I want insights into the different aspects of leadership behaviour in terms of personlities/words used/hobbies/interests/aspirations or any such thing which leaders me understand leadership behaviour.
+Just for context, these messages are uber chats which I have already analysed and classified into messages that display leadership behaviour. Why and how each message displays leadership behaviour is provided in the explanations for each message. Please use this and this knowledge in the explanations to come up with optimal number of distinct and unique clusters where each cluster displays a distinct and unique insight into how/why/what leadership behaviour is displayed in the gig economy. Reference only the explanations (and for more context, the messages as well) to form your clusters and use only this knowledge leadership behaviour and gig economy.
+Just for more context, a gig economy is a free market system in which temporary positions are common and organizations hire independent workers for short-term commitments.
+The most important point to note here is that I want to distinct and different clusters where each cluster gives me insight into some aspect or dimension of leadership behaviour in the gig economy. Make sure that the clusters dont overlap in terms of any aspect. For example, don't create multiple clusters around people who give actionable advice. The clusters should be very unique in terms of what aspect/dimension they represent for leadership behaviour in the gig economy.
+Please give your output in a table format where column 1 - cluster number, column 3 - cluster definition which should be extremely extnsive definition and explanation explanaining the distinctness and uniqueness of what the cluster tells us about leadership behaviours in the gig economy - for example, what kind of specific behaviour, usage of similar experessions, uniqueness in actions taken etc. Use examples from the message to decscribe each cluster definition. Please don't use your internal knowledge and only base the definition on the information I have provided in the explanations for each message below. Include a column 4 which has some examples of the sentences that correspond to that cluster. Make sure the clusters reference very specific things from the messages and explanations to describe the distinctness about this clusters. Output distinct and unique clusters such that each cluster represents something different and should not have any overlaps in terms of leadership concept. That's why I want you to choose the optimal number of clusters based on your in depth analysis of all the messages and their explanations that I have provided. leadership behaviour is towards their fellow worker or towards passengers. But try to focus on leadership towards their fellow workers  Make your defnition very specific and detailed and in context with the messages and explanations provided. Do make sure you choose the optimal number of clusters in way that all clusters represent all the knowledge/information in the explanations provided.
+I'll be giving you the raw text as well as some explanations that indicate what kind of leadership behaviour is exhibited. Please use both the messages and explanations to come up with your clusters but only use messages in the examples column. Please make sure your definition column is extremely specific and nuanced and very detailed fully in the contxt of the messages and explanation provided. Don't use any internal knowledge to form your definitions
+Please make sure the definitions are very very detailed and lengthy and in the context of the explanations and be very specific referencing the messages and the explanations provided.
+Please diregard all your knowledge of leadership and only consider the messages and explanations mostly provided to form and define your clusters. Please make sure your have atleast 10-12 sentences per cluster deiniftion.
+
+
+Please make sure the clusters are all distinct - don't unnenccesary make 8 clusters if you don't have 8 very unique dimensions of leadership behaviour in gig from the message and explanations privided. The clusters should strictly represent different unique aspects of leadership and have no overlaps at all.
+Here are the messages and their explanations -
+
+
+'''
+
+Topic
+
+prompt = '''I will give you a list of messages that display leadership behviour  and an explanation as to why I think the message displays leadership behaviour in the context of uber drivers and uber work and the contents of the message. More importantly, I want insights into the different topics that people talk about when it comes to displaying leadership qualities. e underlying themes and topics across messages identified with leadership qualities, offering a deeper understanding of the content and context of leadership communication within the gig economy. By analyzing these topics, we can identify common patterns and themes that characterize effective leadership communications
+Please make sure the clusters represent the topics in leadership. I want you to be very detailed and talk about all possible sub topics in each topic as well. Please output a table with column 1 as Topic/s, column 2 as an extensive list of subtopics column 3 as example messages and column 4 as explanation which explains what these topics are and how this cluster is unique and what people talk about. Make this explanation very detailed. I want the list of topics/clusters to be unique and extremely extensively and nuanced and specific. dont make it generic and don;t worry about having too many topics.
+Just for context, these messages are uber chats which I have already analysed and classified into messages that display leadership behaviour. Why and how each message displays leadership behaviour is provided in the explanations for each message. Please use this and this knowledge in the explanations to come up with optimal number of distinct and unique topic clusters where each cluster displays a distinct and unique insight into the topics about leadership. I want to find out just the topics in leadership people talk about and don't think any topic is small which is why form as many distinct clusters as you want. the subtopics should be extremely nuanced and extensive with atleast 5-7 distinct subtopics. The explanation should talk about what topics are being talked about in this topic cluster and how are they being talked about. Reference only the explanations (and for more context, the messages as well) to form your topics clusters and use only this knowledge leadership behaviour and gig economy.
+Just for more context, a gig economy is a free market system in which temporary positions are common and organizations hire independent workers for short-term commitments.
+The most important point to note here is that I want to distinct and different clusters Make sure that the clusters dont overlap in terms of any aspect.
+I'll be giving you the raw text as well as some explanations that indicate what kind of leadership behaviour is exhibited. Please use both the messages and explanations to come up with your topic clusters but only use messages in the examples column.
+Please diregard all your knowledge of leadership and only consider the messages and explanations mostly provided to form and explain your topics.
+Please dont provide any information outside the table and put everything inside the table. dont output any unnenceesary text
+Could you also include a column 4 in your output which indicates the weightage of each cluster which is a measure of how many % messages fall in this cluster
+Here are the messages and their explanations -
+
+
+'''
+Tone
+prompt = '''I will give you a list of messages that are from a datasets . More importantly, I want insights into the kinds tones that are present in people.
+Please make sure the clusters represent the tonal analysis. I want you to be very detailed and talk about the main tones that are present data and how and why they are conveyed by people in that cluster. Please output a table with column 1 as Tone, column 2 as an extensive explanation of in what context is this tone displayed and please name specific topics and subtopics where this tone is displayed. I want this explanation to be extremely long. List of situations will do but focus it on the context in which the tone is displayed and only refer to the messages and not your own knowledge of anything. Ignore your knowledge for this task.. column 3 as example messages
+I want you to find all possible clusters of tones but make sur the clusters are name as per a real tone/emotion etc
+Please include each of these tones in your final output and only look at the messages to give me the weightage in column 4. Look at the explanation to give your explanation in the output.
+Please dont provide any information outside the table and put everything inside the table. dont output any unnenceesary text
+Could you also include a column 4 in your output which indicates the weightage of each tone in the messages which is a measure of how many % messages fall in this tone
+Here are the messages and their explanations -
+
+
+'''
+
+Helping
+
+Clustering
+prompt = '''I will give you a list of messages that display helping behviour in the gigand an explanation as to why I think the message displays helping behaviour. More importantly, I want insights into the different aspects of helping behaviour in terms of what services, support, activities and solutions are provided based on the needs of the message exchanges.
+Just for context, these messages are uber chats which I have already analysed and classified into messages that display helping behaviour. Why and how each message displays helping behaviour is provided in the explanations for each message. Please use this and this knowledge in the explanations to come up with optimal number of distinct and unique clusters where each cluster displays a distinct and unique insight into how/why/what helping behaviour is displayed in the gig economy. Reference only the explanations (and for more context, the messages as well) to form your clusters and use only this knowledge helping behaviour and gig economy.
+Just for more context, a gig economy is a free market system in which temporary positions are common and organizations hire independent workers for short-term commitments.
+The most important point to note here is that I want to distinct and different clusters where each cluster gives me insight into some aspect or dimension of helping behaviour in the gig economy. Make sure that the clusters don't overlap in terms of any aspect. For example, don't create multiple clusters around people who give financial advice. The clusters should be very unique in terms of what aspect/dimension they represent for helping behaviour in the gig economy.
+Please give your output in a table format where column 1 - cluster number, column 3 - cluster definition which should be extremely extensive definition and explanation explanaining the distinctness and uniqueness of what the cluster tells us about helping behaviours in the gig economy - for example, what kind of specific behaviour, usage of similar expressions, uniqueness in actions taken etc. Use examples from the message to describe each cluster definition. Please don't use your internal knowledge and only base the definition on the information I have provided in the explanations for each message below. Include a column 4 which has some examples of the sentences that correspond to that cluster. Make sure the clusters reference very specific things from the messages and explanations to describe the distinctness about this clusters. Output distinct and unique clusters such that each cluster represents something different and should not have any overlaps in terms of helping concept. That's why I want you to choose the optimal number of clusters based on your in depth analysis of all the messages and their explanations that I have provided. While helping behaviour can be towards their fellow worker or towards passenger, try to focus on helping towards their fellow workers  only. Make your definition very specific and detailed and in context with the messages and explanations provided. Do make sure you choose the optimal number of clusters in way that all clusters represent all the knowledge/information in the explanations provided.
+I'll be giving you the raw text as well as some explanations that indicate what kind of helping behaviour is exhibited. Please use both the messages and explanations to come up with your clusters but only use messages in the examples column. Please make sure your definition column is extremely specific and nuanced and very detailed fully in the context of the messages and explanation provided. Don't use any internal knowledge to form your definitions
+Please make sure the definitions are very very detailed and lengthy and in the context of the explanations and be very specific referencing the messages and the explanations provided.
+Please disregard all your knowledge of helping and only consider the messages and explanations mostly provided to form and define your clusters. Please make sure your have at least 10-12 sentences per cluster definition.
+
+
+Please make sure the clusters are all distinct - don't unnecessary make 8 clusters if you don't have 8 very unique dimensions of helping behaviour in gig from the message and explanations provided. The clusters should strictly represent different unique aspects of helping and have no overlaps at all.
+Here are the messages and their explanations -
+
+
+'''
+Topic
+
+prompt = '''I will give you a list of messages that display helping behviour  and an explanation as to why I think the message displays helping behaviour in the context of uber drivers and uber work and the contents of the message. More importantly, I want insights into the different topics that people talk about when it comes to displaying helping qualities. e underlying themes and topics across messages identified with helping qualities, offering a deeper understanding of the content and context of helping communication within the gig economy. By analyzing these topics, we can identify common patterns and themes that characterize effective helping communications
+Please make sure the clusters represent the topics in helping. I want you to be very detailed and talk about all possible sub topics in each topic as well. Please output a table with column 1 as Topic/s, column 2 as an extensive list of subtopics column 3 as example messages and column 4 as explanation which explains what these topics are and how this cluster is unique and what people talk about. Make this explanation very detailed. I want the list of topics/clusters to be unique and extremely extensively and nuanced and specific. dont make it generic and don;t worry about having too many topics.
+Just for context, these messages are uber chats which I have already analysed and classified into messages that display helping behaviour. Why and how each message displays helping behaviour is provided in the explanations for each message. Please use this and this knowledge in the explanations to come up with optimal number of distinct and unique topic clusters where each cluster displays a distinct and unique insight into the topics about helping. I want to find out just the topics in helping people talk about and don't think any topic is small which is why form as many distinct clusters as you want. the subtopics should be extremely nuanced and extensive with at least 5-7 distinct subtopics. The explanation should talk about what topics are being talked about in this topic cluster and how are they being talked about. Reference only the explanations (and for more context, the messages as well) to form your topics clusters and use only this knowledge helping behaviour and gig economy.
+Just for more context, a gig economy is a free market system in which temporary positions are common and organizations hire independent workers for short-term commitments.
+The most important point to note here is that I want to distinct and different clusters Make sure that the clusters dont overlap in terms of any aspect.
+I'll be giving you the raw text as well as some explanations that indicate what kind of helping behaviour is exhibited. Please use both the messages and explanations to come up with your topic clusters but only use messages in the examples column.
+Please diregard all your knowledge of helping and only consider the messages and explanations mostly provided to form and explain your topics.
+Please dont provide any information outside the table and put everything inside the table. dont output any unnenceesary text
+Could you also include a column 4 in your output which indicates the weightage of each cluster which is a measure of how many % messages fall in this cluster
+Here are the messages and their explanations -
+
+
+'''
+Tone
+prompt = '''I will give you a list of messages that are from a datasets . More importantly, I want insights into the kinds tones that are present in people.
+Please make sure the clusters represent the tonal analysis. I want you to be very detailed and talk about the main tones that are present data and how and why they are conveyed by people in that cluster. Please output a table with column 1 as Tone, column 2 as an extensive explanation of in what context is this tone displayed and please name specific topics and subtopics where this tone is displayed. I want this explanation to be extremely long. List of situations will do but focus it on the context in which the tone is displayed and only refer to the messages and not your own knowledge of anything. Ignore your knowledge for this task.. column 3 as example messages
+I want you to find all possible clusters of tones but make sur the clusters are name as per a real tone/emotion etc
+Please include each of these tones in your final output and only look at the messages to give me the weightage in column 4. Look at the explanation to give your explanation in the output.
+Please dont provide any information outside the table and put everything inside the table. dont output any unnenceesary text
+Could you also include a column 4 in your output which indicates the weightage of each tone in the messages which is a measure of how many % messages fall in this tone
+Here are the messages and their explanations -
+
+
+Prompt for Step 4
+Clustering
+prompt = '''
+Combine these tables for me into one final table which has all the columns as in the input table and represents the tonal analysis of the input text.
+I want you to give me a final output which has at least 10 tones, carefully taking everything from the input tables, and 7-10 subtones per topic
+I want you to create an additional subtones column which has at least 15 subtones within the tone but make sure that each tone cluster, as defined by its subtones, is unique
+Mkae sure you give atleast 15 sample messages in the examples column in your final table per tone cluster. Get these messages from the input tables.
+Make sure the tones are real emotions or one of the common tones. If it's topics or anything which is not a tone then don't include it in the final table
+Give atleast 12 tones.
+Please also give an explanation column which explains the context of the tone and it's usage based on the information given. Please only refer to the messages or tables given. dont make anything up here and be extremely detailed and extensive
+Please make sure to include everything in the table and don't give anything outside the table. Dont include any text outside the table
+Please make the explanation atleast 15 sentences long using everything Ive given in the input tables. I want the explanation to be extremely extensive using everyting possible from the input tables
+Input tables -
+
+'''
+
+
+prompt = '''
+
+
+I want you to classify the tone of the text into one of the given tones. the context of the task is that I want to do a tonal analysis.
+Please only classify the text as one of the given tones only and only output one tone for the text. Please give your output in format - [tone].  Please enclose your output within square brackets only and dont give any unnecessary information or explanation as to why you chose that label simply give me the labels in square brackets. If the message doesnt fit into any of the tones then please output none in the brackets for tones but please try to fit the message into one of the tones but dont force it
+These are the tones i want you to classify the text into -
+
+
+Frustrated
+Assertive
+Critical
+Supportive
+Humorous
+Cautionary
+Reflective
+Inquisitive
+Urgent
+
+
+Uber Message
+
+
+'''
+
+
+
